@@ -1,19 +1,29 @@
 {
-  "name": "myflix-client",
-  "version": "1.0.0",
-  "description": "",
-  "main": "src/index.html",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/noah-gg/myFlix-client.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/noah-gg/myFlix-client/issues"
-  },
-  "homepage": "https://github.com/noah-gg/myFlix-client#readme"
+	"name": "myflix-client",
+	"version": "1.0.0",
+	"description": "",
+	"source": "src/index.html",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "parcel",
+		"watch": "parcel watch",
+		"build": "parcel build"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/noah-gg/myFlix-client.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/noah-gg/myFlix-client/issues"
+	},
+	"homepage": "https://github.com/noah-gg/myFlix-client#readme",
+	"dependencies": {
+		"react": "^18.1.0",
+		"react-dom": "^18.1.0"
+	},
+	"devDependencies": {
+		"@parcel/transformer-sass": "^2.0.0-rc.0"
+	}
 }
