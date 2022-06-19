@@ -1,0 +1,30 @@
+$primary-text-color: #ffffff;
+$brand-color: #531ec6;
+$background-color: #211e1e;
+
+.movie-view {
+	margin: 2.5rem;
+	color: $primary-text-color;
+}
+
+.movie-poster {
+	text-align: center;
+}
+
+#movie__img {
+	max-height: 500px;
+	max-width: 100%;
+	box-shadow: 0px 0px 15px rgb(182, 182, 182, 0.5);
+}
+
+.movie-title {
+	margin-top: 1rem;
+}
+
+#back__button {
+	margin-top: 1rem;
+}
+
+.movie-description {
+	margin-top: 0.5rem;
+}

@@ -1,5 +1,10 @@
-$color: steelblue;
+$primary-text-color: #ffffff;
+$card-background: #531ec6;
+$background-color: #211e1e;
 
-.my-flix {
-	color: $color;
+html,
+body {
+	height: 100%;
+	width: 100%;
+	background-color: $background-color;
 }

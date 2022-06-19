@@ -1,0 +1,19 @@
+$primary-text-color: #ffffff;
+$brand-color: #531ec6;
+$background-color: #211e1e;
+
+#movie__card {
+	height: 650px;
+	margin-top: 30px;
+	border: none;
+}
+
+#movie__card__img {
+	max-width: 100%;
+	height: 300px;
+}
+
+#movie__card__body {
+	color: $primary-text-color;
+	background-color: $brand-color;
+}

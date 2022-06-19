@@ -1,0 +1,28 @@
+$primary-text-color: #ffffff;
+$brand-color: #531ec6;
+$background-color: #211e1e;
+
+.app-container {
+	height: 100%;
+	background-color: $brand-color;
+}
+
+#login-container {
+	max-width: 500px;
+	min-width: 300px;
+}
+
+#card {
+	margin-top: 150px;
+}
+
+#card__title {
+	text-align: center;
+	color: $brand-color;
+}
+
+#primary__button {
+	margin-top: 10px;
+	background-color: $brand-color;
+	border-color: $brand-color;
+}
