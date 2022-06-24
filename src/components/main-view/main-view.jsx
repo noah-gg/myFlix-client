@@ -8,6 +8,7 @@ import { MovieView } from '../movie-view/movie-view';
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { Container } from 'react-bootstrap';
 
 export class MainView extends React.Component {
 	constructor() {
@@ -21,16 +22,13 @@ export class MainView extends React.Component {
 	}
 
 	componentDidMount() {
-		axios
-			.get('https://anime-myflix-app.herokuapp.com/movies')
-			.then((response) => {
-				this.setState({
-					movies: response.data,
-				});
-			})
-			.catch((error) => {
-				console.log(error);
+		let accessToken = localStorage.getItem('token');
+		if (accessToken !== null) {
+			this.setState({
+				user: localStorage.getItem('user'),
 			});
+			this.getMovies(accessToken);
+		}
 	}
 
 	/* When a movie is clicked, this function is invoked and updates the state of the `selectedMovie` property to that movie */
@@ -47,10 +45,39 @@ export class MainView extends React.Component {
 	}
 
 	/* When a user seuccessfully logs in, this function updates the `user` property in state to that *particular user */
-	onLoggedIn(user) {
+	onLoggedIn(authData) {
+		console.log(authData);
 		this.setState({
-			user,
+			user: authData.user.Username,
 		});
+
+		localStorage.setItem('token', authData.token);
+		localStorage.setItem('user', authData.user.Username);
+		this.getMovies(authData.token);
+	}
+
+	onLoggedOut() {
+		localStorage.removeItem('token');
+		localStorage.removeItem('user');
+		this.setState({
+			user: null,
+		});
+	}
+
+	getMovies(token) {
+		axios
+			.get('https://anime-myflix-app.herokuapp.com/movies', {
+				headers: { Authorization: `Bearer ${token}` },
+			})
+			.then((response) => {
+				// Assign the result to the state
+				this.setState({
+					movies: response.data,
+				});
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
 	}
 
 	render() {
@@ -65,30 +92,44 @@ export class MainView extends React.Component {
 
 		/* If the state of `selectedMovie` is not null, that selected movie will be rendered otherwise, all *movies will be rendered */
 		return (
-			<Row className="main-view justify-content-md-center">
-				{selectedMovie ? (
-					<Col md={8}>
-						<MovieView
-							movie={selectedMovie}
-							onBackClick={(newSelectedMovie) => {
-								this.setSelectedMovie(newSelectedMovie);
+			<Container>
+				<Row>
+					<Col>
+						<button
+							onClick={() => {
+								this.onLoggedOut();
 							}}
-						/>
+						>
+							Logout
+						</button>
 					</Col>
-				) : (
-					movies.map((movie) => (
-						<Col md={3} sm={6}>
-							<MovieCard
-								key={movie._id}
-								movie={movie}
-								onMovieClick={(movie) => {
-									this.setSelectedMovie(movie);
+				</Row>
+
+				<Row className="main-view justify-content-md-center">
+					{selectedMovie ? (
+						<Col md={8}>
+							<MovieView
+								movie={selectedMovie}
+								onBackClick={(newSelectedMovie) => {
+									this.setSelectedMovie(newSelectedMovie);
 								}}
 							/>
 						</Col>
-					))
-				)}
-			</Row>
+					) : (
+						movies.map((movie) => (
+							<Col md={3} sm={6}>
+								<MovieCard
+									key={movie._id}
+									movie={movie}
+									onMovieClick={(movie) => {
+										this.setSelectedMovie(movie);
+									}}
+								/>
+							</Col>
+						))
+					)}
+				</Row>
+			</Container>
 		);
 	}
 }
