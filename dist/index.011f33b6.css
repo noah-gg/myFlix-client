@@ -68,7 +68,6 @@
 }
 .movie-view {
   margin: 2.5rem;
-  color: #ffffff;
 }
 
 .movie-poster {
@@ -89,8 +88,47 @@
   margin-top: 1rem;
 }
 
+.label {
+  color: #ffffff;
+}
+
+.movie-title {
+  color: #ffffff;
+}
+
 .movie-description {
+  color: #ffffff;
   margin-top: 0.5rem;
+}
+
+#back__button, #favourite__button {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  justify-content: center;
+  vertical-align: baseline;
+}
+#back__button:hover, #favourite__button:hover {
+  background-color: #531ec6;
+  border: 1px solid #531ec6;
+}
+#back__button:active, #favourite__button:active {
+  background-color: #211e1e !important;
+}
+
+.btn-right {
+  margin-left: 10px;
+}
+.genre-view {
+  margin: 2.5rem;
+  color: #ffffff;
+}
+#profile__form {
+  margin: 2.5rem;
+  color: #ffffff;
+}
+.director-view {
+  margin: 2.5rem;
+  color: #ffffff;
 }
 html,
 body {

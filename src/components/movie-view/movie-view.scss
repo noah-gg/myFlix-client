@@ -4,7 +4,6 @@ $background-color: #211e1e;
 
 .movie-view {
 	margin: 2.5rem;
-	color: $primary-text-color;
 }
 
 .movie-poster {
@@ -25,6 +24,33 @@ $background-color: #211e1e;
 	margin-top: 1rem;
 }
 
+.label {
+	color: $primary-text-color;
+}
+
+.movie-title {
+	color: $primary-text-color;
+}
+
 .movie-description {
+	color: $primary-text-color;
 	margin-top: 0.5rem;
+}
+
+#back__button, #favourite__button {
+	text-decoration: none;
+	color: rgb(255, 255, 255);
+	justify-content: center;
+	vertical-align: baseline;
+	&:hover {
+		background-color: $brand-color;
+		border: 1px solid $brand-color;
+	}
+	&:active {
+		background-color: #211e1e !important;
+	}
+}
+
+.btn-right {
+	margin-left: 10px;
 }
