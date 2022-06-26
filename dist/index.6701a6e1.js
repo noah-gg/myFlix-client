@@ -45460,7 +45460,7 @@ function UpdateView(props) {
         if (!email) {
             setValues({
                 ...values,
-                emailErr: 'Password Required!'
+                emailErr: 'Email Required!'
             });
             isReq = false;
         } else if (email.indexOf('@') === -1) {
@@ -45686,14 +45686,6 @@ function UpdateView(props) {
                                             lineNumber: 133
                                         },
                                         __self: this
-                                    }),
-                                    values.usernameErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
-                                        __source: {
-                                            fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 140
-                                        },
-                                        __self: this,
-                                        children: values.usernameErr
                                     })
                                 ]
                             }),
@@ -45701,7 +45693,7 @@ function UpdateView(props) {
                                 className: "mt-3",
                                 __source: {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 143
+                                    lineNumber: 141
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
@@ -45710,7 +45702,7 @@ function UpdateView(props) {
                                     onClick: handleSubmit,
                                     __source: {
                                         fileName: "src/components/profile-view/update-view.jsx",
-                                        lineNumber: 144
+                                        lineNumber: 142
                                     },
                                     __self: this,
                                     children: "Edit Profile"

@@ -42,7 +42,7 @@ export function UpdateView(props) {
 			isReq = false;
 		}
 		if (!email) {
-			setValues({ ...values, emailErr: 'Password Required!' });
+			setValues({ ...values, emailErr: 'Email Required!' });
 			isReq = false;
 		} else if (email.indexOf('@') === -1) {
 			setValues({ ...values, emailErr: 'Email must be a valid email address' });
@@ -136,8 +136,6 @@ export function UpdateView(props) {
 								onChange={(e) => setBirthday(e.target.value)}
 								placeholder="YYYY-MM-DD"
 							/>
-							{/* display validation error */}
-							{values.usernameErr && <p>{values.usernameErr}</p>}
 						</Form.Group>
 
 						<Form.Group className='mt-3'>
