@@ -45477,7 +45477,8 @@ function UpdateView(props) {
         const isReq = validate();
         if (isReq) {
             const token = localStorage.getItem('token');
-            _axiosDefault.default.put('https://anime-myflix-app.herokuapp.com/users/${user.Username}', {
+            console.log("look here");
+            _axiosDefault.default.put(`https://anime-myflix-app.herokuapp.com/users/${user.Username}`, {
                 Username: username,
                 Password: password,
                 Email: email,
@@ -45501,20 +45502,20 @@ function UpdateView(props) {
         className: "mt-5",
         __source: {
             fileName: "src/components/profile-view/update-view.jsx",
-            lineNumber: 85
+            lineNumber: 82
         },
         __self: this,
         children: [
             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                 __source: {
                     fileName: "src/components/profile-view/update-view.jsx",
-                    lineNumber: 86
+                    lineNumber: 83
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx("h4", {
                     __source: {
                         fileName: "src/components/profile-view/update-view.jsx",
-                        lineNumber: 87
+                        lineNumber: 84
                     },
                     __self: this,
                     children: "Edit profile"
@@ -45523,7 +45524,7 @@ function UpdateView(props) {
             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                 __source: {
                     fileName: "src/components/profile-view/update-view.jsx",
-                    lineNumber: 89
+                    lineNumber: 86
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
@@ -45532,13 +45533,13 @@ function UpdateView(props) {
                     lg: "6",
                     __source: {
                         fileName: "src/components/profile-view/update-view.jsx",
-                        lineNumber: 90
+                        lineNumber: 87
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form, {
                         __source: {
                             fileName: "src/components/profile-view/update-view.jsx",
-                            lineNumber: 91
+                            lineNumber: 88
                         },
                         __self: this,
                         children: [
@@ -45546,14 +45547,14 @@ function UpdateView(props) {
                                 controlId: "formUsername",
                                 __source: {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 92
+                                    lineNumber: 89
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 93
+                                            lineNumber: 90
                                         },
                                         __self: this,
                                         children: "Username: "
@@ -45567,14 +45568,14 @@ function UpdateView(props) {
                                         required: true,
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 94
+                                            lineNumber: 91
                                         },
                                         __self: this
                                     }),
                                     values.usernameErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 102
+                                            lineNumber: 99
                                         },
                                         __self: this,
                                         children: values.usernameErr
@@ -45585,14 +45586,14 @@ function UpdateView(props) {
                                 controlId: "formPassword",
                                 __source: {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 105
+                                    lineNumber: 102
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 106
+                                            lineNumber: 103
                                         },
                                         __self: this,
                                         children: "Password: "
@@ -45606,14 +45607,14 @@ function UpdateView(props) {
                                         required: true,
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 107
+                                            lineNumber: 104
                                         },
                                         __self: this
                                     }),
                                     values.passwordErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 115
+                                            lineNumber: 112
                                         },
                                         __self: this,
                                         children: values.passwordErr
@@ -45624,14 +45625,14 @@ function UpdateView(props) {
                                 controlId: "formEmail",
                                 __source: {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 118
+                                    lineNumber: 115
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 119
+                                            lineNumber: 116
                                         },
                                         __self: this,
                                         children: "Email: "
@@ -45645,14 +45646,14 @@ function UpdateView(props) {
                                         required: true,
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 120
+                                            lineNumber: 117
                                         },
                                         __self: this
                                     }),
                                     values.emailErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 128
+                                            lineNumber: 125
                                         },
                                         __self: this,
                                         children: values.emailErr
@@ -45663,14 +45664,14 @@ function UpdateView(props) {
                                 controlId: "formBirthday",
                                 __source: {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 131
+                                    lineNumber: 128
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 132
+                                            lineNumber: 129
                                         },
                                         __self: this,
                                         children: "Birthday: "
@@ -45683,7 +45684,7 @@ function UpdateView(props) {
                                         placeholder: "YYYY-MM-DD",
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 133
+                                            lineNumber: 130
                                         },
                                         __self: this
                                     })
@@ -45693,7 +45694,7 @@ function UpdateView(props) {
                                 className: "mt-3",
                                 __source: {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 141
+                                    lineNumber: 138
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
@@ -45702,7 +45703,7 @@ function UpdateView(props) {
                                     onClick: handleSubmit,
                                     __source: {
                                         fileName: "src/components/profile-view/update-view.jsx",
-                                        lineNumber: 142
+                                        lineNumber: 139
                                     },
                                     __self: this,
                                     children: "Edit Profile"

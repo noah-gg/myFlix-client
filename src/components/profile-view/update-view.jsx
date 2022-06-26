@@ -56,28 +56,25 @@ export function UpdateView(props) {
 		const isReq = validate();
 		if (isReq) {
 			const token = localStorage.getItem('token');
-			axios
-				.put(
-					'https://anime-myflix-app.herokuapp.com/users/${user.Username}',
-					{
-						Username: username,
-						Password: password,
-						Email: email,
-						Birthday: birthday,
-					},
-					{
-						headers: { Authorization: `Bearer ${token}` },
-					}
-				)
-				.then((response) => {
-					console.log(response.data);
-					alert('Profile was succesfully updated.');
-					window.open('/users/:username', '_self');
-				})
-				.catch((error) => {
-					console.error(error);
-					alert('Unable to update profile.');
-				});
+			console.log("look here");
+			axios.put(`https://anime-myflix-app.herokuapp.com/users/${user.Username}`,{
+				Username: username,
+				Password: password,
+				Email: email,
+				Birthday: birthday,
+			},
+			{
+				headers: { Authorization: `Bearer ${token}` },
+			})
+			.then(response => {
+				console.log(response.data);
+				alert('Profile was succesfully updated.');
+				window.open('/users/:username', '_self');
+			})
+			.catch((error) => {
+				console.error(error);
+				alert('Unable to update profile.');
+			});
 		}
 	};
 
